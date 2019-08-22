@@ -49,6 +49,7 @@ export default class MyHeader extends Vue {}
       align-items: center;
       font-size: 20px;
       font-weight: 600;
+      color: #fff;
       font-family:Verdana, Geneva, Tahoma, sans-serif
     }
     .header_nav{
