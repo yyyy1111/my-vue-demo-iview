@@ -1,13 +1,9 @@
 <template>
-  <div class="layout">
-    <Header>
-      Header
-    </Header>
+  <div class="home_page">
     <Layout>
       <Sider hide-trigger>Sider</Sider>
-      <Content>Content</Content>
+      <Content>这是home页面</Content>
     </Layout>
-    <Footer>Footer</Footer>
   </div>
 </template>
 
@@ -34,5 +30,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.home_page {
+  height: 100%;
 }
 </style>
