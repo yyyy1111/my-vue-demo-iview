@@ -32,6 +32,6 @@ a {
   color: #42b983;
 }
 .about_page {
-  height: 100%;
+  height: @primary-height;
 }
 </style>

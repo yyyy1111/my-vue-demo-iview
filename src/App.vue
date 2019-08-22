@@ -15,13 +15,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100%;
+  height: @primary-height;
   .home {
-    height: 100%;
+    height: @primary-height;
     .layout {
-      height: 100%;
+      height:@primary-height;
       .ivu-layout {
-        height: 100%;
+        height: @primary-height;
       }
     }
   }
@@ -37,9 +37,9 @@
   }
 }
 html {
-  height: 100%;
+  height: @primary-height;
   body {
-    height: 100%;
+    height: @primary-height;
   }
 }
 </style>
