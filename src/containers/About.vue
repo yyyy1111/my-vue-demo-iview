@@ -1,7 +1,7 @@
 <template>
   <div class="about_page">
     <Layout>
-      <Sider hide-trigger>Sider</Sider>
+      <!-- <Sider hide-trigger>Sider</Sider> -->
       <Content>这是about页面</Content>
     </Layout>
   </div>

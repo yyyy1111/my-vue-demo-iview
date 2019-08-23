@@ -3,9 +3,13 @@
     <Row class="header_row">
         <Col span="20" push="4"  class="header_row header_nav">
           <div class="header_menu_container">
-            <Menu mode="horizontal"  active-name="1" class="header_menu">
-              <MenuItem name="1">首页</MenuItem>
-              <MenuItem name="2">社区</MenuItem>
+            <Menu mode="horizontal"  active-name="1" class="header_menu" theme='primary'>
+              <MenuItem name="1">
+                <router-link to="/home">首页</router-link>
+              </MenuItem>
+              <MenuItem name="2">
+                <router-link to="/about">社区</router-link>
+              </MenuItem>
               <MenuItem name="3">内容编辑</MenuItem>
               <MenuItem name="4">个人中心</MenuItem>
             </Menu>
@@ -67,6 +71,13 @@ export default class MyHeader extends Vue {}
           align-items: center;
           width: 25%;
           height: @primary-height;
+          a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            height: @primary-height;
+          }
         }
       }
       }
@@ -77,7 +88,7 @@ export default class MyHeader extends Vue {}
         align-items: center;
         justify-content: flex-end;
         color: #000;
-        background-color: #fff;
+        background-color: @primary-color;
         .header_img_container{
           height: 40px;
           width: 40px;
@@ -98,13 +109,13 @@ export default class MyHeader extends Vue {}
           margin-left: 20px;
           margin-right: 20px;
           a:nth-child(1){
-            color: @primary-color;
+            color: #fff;
           }
           a:nth-child(2){
             color: #000;
           }
           a:hover{
-            color: @primary-color;
+            color: #fff;
           }
         }
       }

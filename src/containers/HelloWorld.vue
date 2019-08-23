@@ -1,7 +1,7 @@
 <template>
   <div class="home_page">
     <Layout>
-      <Sider hide-trigger>Sider</Sider>
+      <!-- <Sider hide-trigger>Sider</Sider> -->
       <Content>这是home页面</Content>
     </Layout>
   </div>
