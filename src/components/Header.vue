@@ -103,6 +103,9 @@ export default class MyHeader extends Vue {}
           a:nth-child(2){
             color: #000;
           }
+          a:hover{
+            color: @primary-color;
+          }
         }
       }
       

@@ -6,6 +6,7 @@ import './registerServiceWorker';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import './theme/index.less';
+import '@/assets/css/iconfont/iconfont.css';
 Vue.config.productionTip = false;
 Vue.use(iView);
 new Vue({
