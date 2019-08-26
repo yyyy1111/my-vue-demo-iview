@@ -3,16 +3,16 @@
     <Row class="header_row">
         <Col span="20" push="4"  class="header_row header_nav">
           <div class="header_menu_container">
-            <Menu mode="horizontal"  active-name="1" class="header_menu" theme='primary'>
-              <MenuItem name="1">
+            <ul mode="horizontal"  active-name="1" class="header_menu" >
+              <li :class="[isActive ==='首页' ? 'activeClass' : '',]" @click="toggle('444')">
                 <router-link to="/home">首页</router-link>
-              </MenuItem>
-              <MenuItem name="2">
+              </li>
+              <li :class="[isActive ==='社区' ? 'activeClass' : '',]">
                 <router-link to="/about">社区</router-link>
-              </MenuItem>
-              <MenuItem name="3">内容编辑</MenuItem>
-              <MenuItem name="4">个人中心</MenuItem>
-            </Menu>
+              </li>
+              <li :class="[isActive ==='内容编辑' ? 'activeClass' : '',]">内容编辑</li>
+              <li :class="[isActive ==='个人中心' ? 'activeClass' : '',]" >个人中心</li>
+            </ul>
           </div>
           <div class="header_login_container">
             <div class="header_img_container">
@@ -32,11 +32,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue , Emit} from 'vue-property-decorator';
 import { Row , Col , Menu , MenuItem} from 'iview';
 // require('../assets/logo.png');
 @Component
-export default class MyHeader extends Vue {}
+export default class MyHeader extends Vue {
+  data() {
+    return {
+     isActive: '首页'
+    }
+  }
+  toggle(res:any) {
+    console.log(this, 'this')
+    // this.isActive = res;
+  }
+  
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -63,23 +74,36 @@ export default class MyHeader extends Vue {}
       .header_menu_container{
         width: 60%;
         height:@primary-height;
-        .header_menu{
-        height: @primary-height;
+      }
+      .header_menu_container .header_menu{
+        width: 100%;
+        height:@primary-height;
+        display: flex;
         li {
           display: flex;
           justify-content: center;
           align-items: center;
           width: 25%;
           height: @primary-height;
+          background-color:  @primary-color;
+          color: #fff;
+          cursor: pointer;
           a{
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
             color: #fff;
             height: @primary-height;
           }
         }
-      }
+        li:hover{
+          // background-color: rgba(151,213,91,.5)
+          background-color: rgba(255,255,255,.3)
+        }
+        li.activeClass{
+           background-color: rgba(255,255,255,.3)
+        }
       }
       .header_login_container {
         width: 40%;
