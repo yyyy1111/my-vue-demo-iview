@@ -4,7 +4,14 @@
       <!-- <Sider hide-trigger>Sider</Sider> -->
       <Content>
         <Row class="home_container">
-          <Col span='4' class="home_container_left">左边栏</Col>
+          <Col span='4' class="home_container_left">
+            <div class="hcl_first_row">
+              <h3>搜一搜</h3>
+              <Input search enter-button placeholder="请输入关键词" />
+            </div>
+            <div>第二行</div>
+            <div>第三行</div>
+          </Col>
           <Col span='20' class="home_container_right">Home内容区域</Col>
         </Row>
       </Content>
@@ -14,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Row , Col ,} from 'iview';
+import { Row , Col , Input} from 'iview';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
@@ -23,9 +30,6 @@ export default class HelloWorld extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -45,7 +49,18 @@ a {
       height: @primary-height;
     }
     .home_container_left{
-      background-color: #2db7f5
+      background-color: #2db7f5;
+      padding:10px 10px;
+      .hcl_first_row{
+        width: 100%;
+        h3{
+          text-align: left;
+          font-size: 16px;
+          line-height: 40px;
+          font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          color: @primary-color;
+        }
+      }
     }
     .home_container_right{
       background-color: #ff9900

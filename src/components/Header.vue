@@ -55,11 +55,12 @@ export default class MyHeader extends Vue {
     }
     .header_logo{
       display: flex;
-      justify-content: center;
+      justify-content:flex-start;
       align-items: center;
       font-size: 20px;
       font-weight: 600;
       color: #fff;
+      padding-left: 10px;
       font-family:Verdana, Geneva, Tahoma, sans-serif
     }
     .header_nav{
