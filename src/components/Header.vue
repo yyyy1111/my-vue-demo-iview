@@ -4,14 +4,14 @@
         <Col span="20" push="4"  class="header_row header_nav">
           <div class="header_menu_container">
             <ul mode="horizontal"  active-name="1" class="header_menu" >
-              <li :class="[isActive ==='首页' ? 'activeClass' : '',]" @click="toggle('444')">
+              <li :class="[isActive ==='首页' ? 'activeClass' : '',]" @click="toggle('首页')">
                 <router-link to="/home">首页</router-link>
               </li>
-              <li :class="[isActive ==='社区' ? 'activeClass' : '',]">
+              <li :class="[isActive ==='社区' ? 'activeClass' : '',]" @click="toggle('社区')">
                 <router-link to="/about">社区</router-link>
               </li>
-              <li :class="[isActive ==='内容编辑' ? 'activeClass' : '',]">内容编辑</li>
-              <li :class="[isActive ==='个人中心' ? 'activeClass' : '',]" >个人中心</li>
+              <li :class="[isActive ==='内容编辑' ? 'activeClass' : '',]"  @click="toggle('内容编辑')">内容编辑</li>
+              <li :class="[isActive ==='个人中心' ? 'activeClass' : '',]"  @click="toggle('个人中心')">个人中心</li>
             </ul>
           </div>
           <div class="header_login_container">
@@ -32,19 +32,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue , Emit} from 'vue-property-decorator';
-import { Row , Col , Menu , MenuItem} from 'iview';
+import { Component, Prop, Vue , Emit ,Provide} from 'vue-property-decorator';
+import { Row , Col ,} from 'iview';
 // require('../assets/logo.png');
 @Component
 export default class MyHeader extends Vue {
-  data() {
-    return {
-     isActive: '首页'
-    }
-  }
+  @Provide() private isActive: string = '首页';
   toggle(res:any) {
-    console.log(this, 'this')
-    // this.isActive = res;
+    this.isActive = res;
   }
   
 }
