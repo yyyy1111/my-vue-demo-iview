@@ -9,8 +9,16 @@
               <h3>搜一搜</h3>
               <Input search enter-button placeholder="请输入关键词" />
             </div>
-            <div>第二行</div>
-            <div>第三行</div>
+            <div class="hcl_second_row">
+              <h3>文章分类</h3>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <div class="hcl_third_row">
+              <h3>最新更新</h3>
+              <ul></ul>
+            </div>
           </Col>
           <Col span='20' class="home_container_right">Home内容区域</Col>
         </Row>
@@ -20,10 +28,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue , Provide} from 'vue-property-decorator';
 import { Row , Col , Input} from 'iview';
 @Component
 export default class HelloWorld extends Vue {
+  @Provide() private imgSrc: any = require('@/assets/logo.png');
   @Prop() private msg!: string;
 }
 </script>
@@ -51,7 +60,7 @@ a {
     .home_container_left{
       background-color: #2db7f5;
       padding:10px 10px;
-      .hcl_first_row{
+      .hcl_first_row,.hcl_second_row,.hcl_third_row{
         width: 100%;
         h3{
           text-align: left;
@@ -60,6 +69,9 @@ a {
           font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
           color: @primary-color;
         }
+      }
+      .hcl_second_row,.hcl_third_row{
+        margin-top: 10px;
       }
     }
     .home_container_right{

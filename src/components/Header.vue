@@ -16,7 +16,7 @@
           </div>
           <div class="header_login_container">
             <div class="header_img_container">
-              <img src="../assets/logo.png">
+              <img :src="imgSrc">
             </div>
             <div class="header_login_text">
               <a href="javascript:;">登录</a>/
@@ -34,10 +34,12 @@
 <script lang="ts">
 import { Component, Prop, Vue , Emit ,Provide} from 'vue-property-decorator';
 import { Row , Col ,} from 'iview';
+// const imgSrc = require('../assets/logo.png');
 // require('../assets/logo.png');
 @Component
 export default class MyHeader extends Vue {
   @Provide() private isActive: string = '首页';
+  @Provide() private imgSrc: any = require('@/assets/logo.png');
   toggle(res:any) {
     this.isActive = res;
   }
