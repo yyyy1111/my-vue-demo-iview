@@ -12,12 +12,37 @@
             <div class="hcl_second_row">
               <h3>文章分类</h3>
               <ul>
-                <li></li>
+                <li>
+                  <Row>
+                    <Col span='4'>
+                      <div class="article_classification">
+                        <img :src="imgSrc" alt="">
+                      </div>
+                    </Col>
+                    <Col span='20'>文字</Col>
+                  </Row>
+                </li>
+                <li>
+                  xxxx
+                </li>
+                <li>
+                  xxxx
+                </li>
               </ul>
             </div>
             <div class="hcl_third_row">
               <h3>最新更新</h3>
-              <ul></ul>
+              <ul>
+                <li>
+                  xxxx
+                </li>
+                <li>
+                  xxxx
+                </li>
+                <li>
+                  xxxx
+                </li>
+              </ul>
             </div>
           </Col>
           <Col span='20' class="home_container_right">Home内容区域</Col>
@@ -43,10 +68,6 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 a {
   color: #42b983;
 }
@@ -69,9 +90,28 @@ a {
           font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
           color: @primary-color;
         }
+        ul {
+          li {
+            text-align: left;
+            cursor: pointer;
+          }
+        }
       }
       .hcl_second_row,.hcl_third_row{
         margin-top: 10px;
+      }
+      .hcl_second_row{
+        ul{
+          li{
+            .article_classification{
+              width: 40px;
+              height: 40px;
+              img{
+                width:100%;
+              }
+            }
+          }
+        }
       }
     }
     .home_container_right{
