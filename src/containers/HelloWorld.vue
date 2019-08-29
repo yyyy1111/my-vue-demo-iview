@@ -4,6 +4,7 @@
       <!-- <Sider hide-trigger>Sider</Sider> -->
       <Content>
         <Row class="home_container">
+          <Col span='20' class="home_container_right">Home内容区域</Col>
           <Col span='4' class="home_container_left">
             <div class="hcl_first_row">
               <h3>搜一搜</h3>
@@ -15,11 +16,13 @@
                 <li>
                   <Row>
                     <Col span='4'>
-                      <div class="article_classification">
+                      <div class="article_classification_imgbox">
                         <img :src="imgSrc" alt="">
                       </div>
                     </Col>
-                    <Col span='20'>文字</Col>
+                    <Col span='20'>
+                      <div class="article_classification_textbox">文字</div>
+                    </Col>
                   </Row>
                 </li>
                 <li>
@@ -45,7 +48,6 @@
               </ul>
             </div>
           </Col>
-          <Col span='20' class="home_container_right">Home内容区域</Col>
         </Row>
       </Content>
     </Layout>
@@ -103,13 +105,21 @@ a {
       .hcl_second_row{
         ul{
           li{
-            .article_classification{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            .article_classification_imgbox{
               width: 40px;
               height: 40px;
               img{
                 width:100%;
               }
             }
+            .article_classification_textbox{
+              padding-left:10px;
+            }
+          }
+          li:hover{
+            box-shadow:0px 0px 2px 1px rgba(0,0,0,.2);
           }
         }
       }

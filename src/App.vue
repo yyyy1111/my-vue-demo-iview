@@ -40,6 +40,8 @@ html {
   height: @primary-height;
   body {
     height: @primary-height;
+    width: 82%;
+    margin: 0 auto;
   }
 }
 </style>
